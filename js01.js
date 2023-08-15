@@ -7,24 +7,55 @@
 // delete(Cat.name);
 // console.log(Cat)
 //2 part
-function IsObjectEmpty(_object)
-{
-    if(typeof(_object) === "object")
-    {
-        var keys = Array.from(Object.keys(_object))
+// function IsObjectEmpty(_object)
+// {
+//     if(typeof(_object) === "object")
+//     {
+//         var keys = Array.from(Object.keys(_object))
 
-        if(keys.length == 0)
-            return true;
-        else
-            return false;
-    }
-    else
-    {
-        return null;
-    }
+//         if(keys.length == 0)
+//             return true;
+//         else
+//             return false;
+//     }
+//     else
+//     {
+//         return null;
+//     }
+// }
+// const team = {}
+// console.log(IsObjectEmpty(team)) // true
+
+// team["Nomistor"] = "Dmitry"
+// console.log(IsObjectEmpty(team)) // false
+//part 3
+const employee = {
+    salary: 100,
+    age: 200
 }
-const team = {}
-console.log(IsObjectEmpty(team)) // true
 
-team["Nomistor"] = "Dmitry"
-console.log(IsObjectEmpty(team)) // false
+function SumSalaries(employee)
+{
+    var keys = Array.from(Object.keys(employee))
+    var numberKeys = new Array();
+    var result; 
+
+    keys.forEach((element) => {
+        if(typeof(employee[element]) == "number")
+        {
+           numberKeys.push(element); 
+        }
+        
+        result = 0;
+
+        numberKeys.forEach((element) => {
+            
+            result += employee[element];
+        })
+
+       return result;
+    });
+}
+var result = SumSalaries(employee)
+console.log(result);
+
