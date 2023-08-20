@@ -34,28 +34,42 @@ const employee = {
     age: 200
 }
 
-function SumSalaries(employee)
-{
-    var keys = Array.from(Object.keys(employee))
-    var numberKeys = new Array();
-    var result; 
+// function SumSalaries(employee)
+// {
+//     var keys = Array.from(Object.keys(employee))
+//     var numberKeys = new Array();
+//     var result; 
 
-    keys.forEach((element) => {
-        if(typeof(employee[element]) == "number")
-        {
-           numberKeys.push(element); 
-        }
+//     keys.forEach((element) => {
+//         if(typeof(employee[element]) == "number")
+//         {
+//            numberKeys.push(element); 
+//         }
         
-        result = 0;
+//         result = 0;
 
-        numberKeys.forEach((element) => {
+//         numberKeys.forEach((element) => {
             
-            result += employee[element];
-        })
+//             result += employee[element];
+//         })  
 
-       return result;
-    });
+//        return result;
+//     });
+// }
+// var result = SumSalaries(employee)
+// console.log(result);
+
+////    this#1
+const Calculator = 
+{
+    x: 0,
+    y: 0,
+    Read:  function() {
+        x = prompt("Введите x", 0);
+        y = prompt("Введите y", 0);
+        
+    }
 }
-var result = SumSalaries(employee)
-console.log(result);
 
+var result = Calculator.Read()
+console.log(result)
