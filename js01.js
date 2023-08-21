@@ -90,13 +90,35 @@ const calculator =
     }
 }
 
-calculator.read(2) // 2
-calculator.mul(100) // 200
-calculator.sub(3) // 197
-calculator.show() // выводит текущий результат
-calculator.read(0) // 0
-calculator.add(1) // 0
-calculator.add(112.345) // 112.345
-calculator.show() // ...
+function Calculator()
+{
+    var x = 0;
 
-calculator.read(2).add(11).div(3).show().read(2).sub(1).show()
+    this.read = function(x) 
+    {
+        this.x = x;
+    } 
+    this.add = function(y)
+    {
+        this.x += y;
+    }
+    this.mul = function(y){
+        this.x *= y
+    }
+    this.sub= function(y){
+        this.x -= y
+    }
+    this.div = function(y){
+        this.x /= y
+    }
+    this.show = function(){
+        alert(this.x)
+    }
+    return
+}
+
+const _calc = new Calculator()
+_calc.read(1)
+_calc.add(2)
+_calc.mul(2)
+_calc.show()
