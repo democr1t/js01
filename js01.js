@@ -60,16 +60,34 @@ const employee = {
 // console.log(result);
 
 ////    this#1
-const Calculator = 
+const calculator = 
 {
     x: 0,
     y: 0,
-    Read:  function() {
-        x = prompt("Введите x", 0);
-        y = prompt("Введите y", 0);
-        
+    Read: function(x) {
+        this.x = x;   
+    },
+    Add: function(y) {
+        return Number(this.x) + Number(y);
+    },
+    Mul: function(y) {
+        this.x *= y
+    },
+    Sub: function(y) {
+        this.x -= y;
+    },
+    Div: function(y){
+        this.x /= y;
+    },
+    Show: function(y){
+        alert(x);
     }
 }
 
-var result = Calculator.Read()
-console.log(result)
+calculator.Read(2).Add(11).Div(3).Show().Read(2).Sub(1).Show()
+// Calculator.Read()
+// var result = Calculator.Add();
+// console.log("result: " + result)
+
+// result = Calculator.Mul();
+// console.log("result: " + result)
