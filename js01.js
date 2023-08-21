@@ -64,30 +64,39 @@ const calculator =
 {
     x: 0,
     y: 0,
-    Read: function(x) {
-        this.x = x;   
+    read: function(x) {
+        this.x = x;
+        return this   
     },
-    Add: function(y) {
-        return Number(this.x) + Number(y);
+    add: function(y) {
+        this.x += Number(y);
+        return this
     },
-    Mul: function(y) {
+    mul: function(y) {
         this.x *= y
+        return this
     },
-    Sub: function(y) {
+    sub: function(y) {
         this.x -= y;
+        return this
     },
-    Div: function(y){
+    div: function(y){
         this.x /= y;
+        return this
     },
-    Show: function(y){
-        alert(x);
+    show: function(){
+        alert(this.x);
+        return this
     }
 }
 
-calculator.Read(2).Add(11).Div(3).Show().Read(2).Sub(1).Show()
-// Calculator.Read()
-// var result = Calculator.Add();
-// console.log("result: " + result)
+calculator.read(2) // 2
+calculator.mul(100) // 200
+calculator.sub(3) // 197
+calculator.show() // выводит текущий результат
+calculator.read(0) // 0
+calculator.add(1) // 0
+calculator.add(112.345) // 112.345
+calculator.show() // ...
 
-// result = Calculator.Mul();
-// console.log("result: " + result)
+calculator.read(2).add(11).div(3).show().read(2).sub(1).show()
